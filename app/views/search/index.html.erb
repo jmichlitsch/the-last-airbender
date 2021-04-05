@@ -1,4 +1,5 @@
-<h1> Total Members: <%= @members.count %></h1>
+<h1> Total Members: <%= @population %></h1>
+<%= binding.pry %>
 
 <%= @members.each do |member|%>
     <div class="member" id='member-<%=member[:_id] %>'>

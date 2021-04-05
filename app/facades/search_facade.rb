@@ -1,7 +1,16 @@
 class SearchFacade
   def self.get_info(nation_name,character_number=25)
     response = SearchService.get_nation_info(nation_name,character_number)
-    response[:characters]
+    body = response[:characters]
+
+    body.first(25).map do |new_member|
+      Member.new(new_member)
+    end
+  end
+
+  def self.get_pop(nation_name,character_number=25)
+    response = SearchService.get_nation_info(nation_name,character_number)
+    body = response[:population]
   end
 end
 

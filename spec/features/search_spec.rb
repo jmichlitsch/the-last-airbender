@@ -8,7 +8,7 @@ RSpec.describe 'index page' do
         click_button("Search For Members")
 
         expect(current_path).to eq(search_path)
-        expect(page).to have_content("Total Members: 25")
+        expect(page).to have_content("Total Members: 97")
         expect(page).to have_css('.member', count: 25)
 
             within("#member-#{member.id}") do
