@@ -2,4 +2,8 @@
 
 <%= @members.each do |member|%>
     <div class="member" id='member-<%=member[:_id] %>'>
+    <h3><%= member[:name]%></h3>
+    <h3><%= member[:allies]%></h3>
+    <h3><%= member[:enemies]%></h3>
+    <h3><%= member[:affiliation]%></h3>
     <% end%>

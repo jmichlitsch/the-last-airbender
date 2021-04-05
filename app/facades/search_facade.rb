@@ -1,13 +1,9 @@
-class TheLastAirbenderFacade
-  def self.get_info(nation, number_of_characters=25)
-    response = response = Faraday.get("https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=#{nation_name.gsub('_', '+')}&perPage=10000")
-        results = json_parse(response)
-        {
-          population: results.count,
-          characters: results[0..(number_of_characters-1)]
-        }
-      end
+class SearchFacade
+  def self.get_info(nation_name,character_number=25)
+    response = SearchService.get_nation_info(nation_name,character_number)
+    response[:characters]
   end
+end
 
 
 
