@@ -14,7 +14,7 @@ RSpec.describe 'index page' do
         members.each do |member|
             within("#member-#{member.id}") do 
                 expect(page).to have_content(member.name)
-                expect(page).to have_css('img') if member.photo_url
+                # expect(page).to have_css('img') if member.photo_url
                 expect(page).to have_content("Allies: #{member.allies}")
                 expect(page).to have_content("Enemies: #{member.eneimes}")
                 expect(page).to have_content(member.affiliation)
